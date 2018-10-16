@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Major Studio Assignment #2</title>
+
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <style type="text/css">
+          h2 {
+            text-align: center;
+            font-family: sans-serif;
+            color: #173e43;
+          }
+
+          h3 {
+            color: #173e43;
+          }
+
+          body {
+            text-align: center;
+            font-family: sans-serif;
+          }
+
+          .chart {
+            fill: #fae596;
+            overflow: visible;
+            text-align: center;
+
+          }
+          .chart2 {
+            fill: #3fb0ac;
+
+          }
+          text {
+            fill: black;
+          }
+
+          rect:hover {
+            fill: #173e43;
+          }
+
+          span{
+            /* STYLE THE WIDTH AND DISPLAY PROPERTIES HERE*/
+            width:420px;
+            font-size: 75%;
+            color: #173e43;
+            text-align: center;
+            display:inline-block;
+            padding-bottom: 20px;
+            }
+
+</style>
+    </head>
+    <body>
+      <h2>A look at G8 countries: Renewable Energy Output vs Energy Consumption in 2015 (GWh)</h2>
+      <h3>Canada is the only G8 country to produce more renewable energy than it consumes</h3>
+      <hr>
+      <br>
+      <br>
+      <br>
+      <br>
+      <span>Total Energy Consumption (GWh)</span>
+      <span>Total Renewable Energy Output (GWh)</span>
+      <br>
+      <svg class="chart"></svg>
+      <svg class="chart2"></svg>
+      <svg class="chart"></svg>
+      <svg class="chart2"></svg>
+        <script type="text/javascript">
+
+        var width = 420,
+            barHeight = 25;
+
+        var x = d3.scale.linear()
+                .range([0, width]);
+
+        //First Chart
+        var chart2 = d3.select(".chart2")
+                .attr("width", width);
+
+        d3.csv("https://gavamedia.com/TEMP/renewableOutput.csv", type, function(error, data) {
+          x.domain([0, d3.max(data, function(d) { return d["2015"]* 1.5; })]); //changes bar responsiveness here
+
+          chart2.attr("height", barHeight * data.length);
+
+            var bar = chart2.selectAll("g")
+          .data(data)
+            .enter().append("g")
+            .attr("transform", function(d,i) { return "translate(0," + i * barHeight + ")"; });
+
+          bar.append("rect")
+            .attr("width", function(d) { return x(d["2015"]);})
+            .attr("height", barHeight - 1)
+
+          bar.append("text")
+            .attr("x", function(d) {return x(d["2015"]) +3; }) //changes label spacing here
+            .attr("y", barHeight / 2)
+            .attr("dy", ".35em")
+            .text(function(d) {return d["Country Name"]; });
+
+              });
+
+        //Second Chart
+        var chart = d3.select(".chart")
+            .attr("width", width);
+
+        d3.csv("https://gavamedia.com/TEMP/energyConsumed.csv", type, function(error, data) {
+          x.domain([0, d3.max(data, function(d) { return d["2015"]* 1.5; })]); //changes bar responsiveness here
+
+          chart.attr("height", barHeight * data.length);
+
+          var bar = chart.selectAll("g")
+          .data(data)
+              .enter().append("g")
+              .attr("transform", function(d,i) { return "translate(0," + i * barHeight + ")"; });
+
+          bar.append("rect")
+              .attr("x", function(d)  {return width - x(d["2015"]);})
+              .attr("width", function(d) { return x(d["2015"]);})
+              .attr("height", barHeight - 1)
+              .style(0.75);
+
+
+        //adding a legend
+        // legend = svg.append("g")
+        //       .attr("class","legend")
+        //       .attr("transform","translate(50,30)")
+        //       .style("font-size","12px")
+        //       .call(d3.legend)
+
+
+            });
+
+      function type(d) {
+        d.value = +d.value; // coerce to number
+        return d;
+        }
+
+        </script>
+    </body>
+</html>

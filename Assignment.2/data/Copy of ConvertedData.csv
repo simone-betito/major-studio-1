@@ -1,0 +1,18 @@
+﻿Country Name,Country Code,Indicator Name,Indicator Code,2015
+Canada,CAN,Renewable electricity output (GWh) ,4.1.2_REN.ELECTRICITY.OUTPUT,422643
+Canada,CAN,Total final energy consumption (TFEC) (GWh),1.1_TOTAL.FINAL.ENERGY.CONSUM,117 401
+France,FRA,Renewable electricity output (GWh),4.1.2_REN.ELECTRICITY.OUTPUT,89357
+France,FRA,Total final energy consumption (TFEC) (GWh),1.1_TOTAL.FINAL.ENERGY.CONSUM,1564489.6
+Germany,DEU,Renewable electricity output (GWh),4.1.2_REN.ELECTRICITY.OUTPUT,187366
+Germany,DEU,Total final energy consumption (TFEC) (GWh),1.1_TOTAL.FINAL.ENERGY.CONSUM,8 327 615
+Italy,ITA,Renewable electricity output (GWh),4.1.2_REN.ELECTRICITY.OUTPUT,108906
+Italy,ITA,Total final energy consumption (TFEC) (GWh),1.1_TOTAL.FINAL.ENERGY.CONSUM,1 309 600
+Japan,JPN,Renewable electricity output (GWh),4.1.2_REN.ELECTRICITY.OUTPUT,165485
+Japan,JPN,Total final energy consumption (TFEC) (GWh),1.1_TOTAL.FINAL.ENERGY.CONSUM,2 933 272
+Russian Federation,RUS,Renewable electricity output (GWh),4.1.2_REN.ELECTRICITY.OUTPUT,168963
+Russian Federation,RUS,Total final energy consumption (TFEC) (GWh),1.1_TOTAL.FINAL.ENERGY.CONSUM,4 391 428
+United Kingdom,GBR,Renewable electricity output (GWh),4.1.2_REN.ELECTRICITY.OUTPUT,83551
+United Kingdom,GBR,Total final energy consumption (TFEC) (GWh),1.1_TOTAL.FINAL.ENERGY.CONSUM,1 368 397
+United States,USA,Renewable electricity output (GWh),4.1.2_REN.ELECTRICITY.OUTPUT,568439
+United States,USA,Total final energy consumption (TFEC) (GWh),1.1_TOTAL.FINAL.ENERGY.CONSUM,16 245 295
+United States,USA,Total final energy consumption (TFEC) (TJ),1.1_TOTAL.FINAL.ENERGY.CONSUM,58483061.91
