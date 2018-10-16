@@ -4,17 +4,19 @@
     <head>
         <meta charset="utf-8">
         <title>Major Studio Assignment #2</title>
-
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Roboto+Condensed" rel="stylesheet">
         <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
         <style type="text/css">
           h2 {
             text-align: center;
-            font-family: sans-serif;
+            font-family: 'Roboto Condensed', sans-serif;
             color: #173e43;
           }
 
+
           h3 {
             color: #173e43;
+            font-family: 'Roboto Condensed', sans-serif;
           }
 
           body {
@@ -57,9 +59,6 @@
       <h3>Canada is the only G8 country to produce more renewable energy than it consumes</h3>
       <hr>
       <br>
-      <br>
-      <br>
-      <br>
       <span>Total Energy Consumption (GWh)</span>
       <span>Total Renewable Energy Output (GWh)</span>
       <br>
@@ -79,7 +78,7 @@
         var chart2 = d3.select(".chart2")
                 .attr("width", width);
 
-        d3.csv("renewableOutput.csv", type, function(error, data) {
+        d3.csv("https://gavamedia.com/TEMP/renewableOutput.csv", type, function(error, data) {
           x.domain([0, d3.max(data, function(d) { return d["2015"]* 1.5; })]); //changes bar responsiveness here
 
           chart2.attr("height", barHeight * data.length);
@@ -105,7 +104,7 @@
         var chart = d3.select(".chart")
             .attr("width", width);
 
-        d3.csv("energyConsumed.csv", type, function(error, data) {
+        d3.csv("https://gavamedia.com/TEMP/energyConsumed.csv", type, function(error, data) {
           x.domain([0, d3.max(data, function(d) { return d["2015"]* 1.5; })]); //changes bar responsiveness here
 
           chart.attr("height", barHeight * data.length);
