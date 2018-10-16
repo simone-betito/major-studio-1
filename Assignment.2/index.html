@@ -78,7 +78,7 @@
         var chart2 = d3.select(".chart2")
                 .attr("width", width);
 
-        d3.csv("https://github.com/simone-betito/major-studio-1/blob/master/Assignment.2/renewableOutput.csv", type, function(error, data) {
+        d3.csv("renewableOutput.csv", type, function(error, data) {
           x.domain([0, d3.max(data, function(d) { return d["2015"]* 1.5; })]); //changes bar responsiveness here
 
           chart2.attr("height", barHeight * data.length);
@@ -104,7 +104,7 @@
         var chart = d3.select(".chart")
             .attr("width", width);
 
-        d3.csv("https://github.com/simone-betito/major-studio-1/blob/master/Assignment.2/energyConsumed.csv", type, function(error, data) {
+        d3.csv("energyConsumed.csv", type, function(error, data) {
           x.domain([0, d3.max(data, function(d) { return d["2015"]* 1.5; })]); //changes bar responsiveness here
 
           chart.attr("height", barHeight * data.length);
