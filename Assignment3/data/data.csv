@@ -1,0 +1,34 @@
+﻿Year,Country,Type of Facility,No Electricity (%),Generator Only (%),"Central, Solar , or Other Supply (%)",Reliable Electricity (%)
+2008,Ethiopia ,All Facilities,14,5,81,-
+2008,Ethiopia ,Hospital,1,2,96,-
+2008,Ethiopia ,Other Facilities,15,6,79,-
+2004,The Gambia,All Facilities,0,33,67,25
+2004,The Gambia,Hospital,0,20,80,40
+2004,The Gambia,Other Facilities,0,43,57,14
+2002,Ghana,All Facilities,31,,,
+2002,Ghana,Hospital,6,,,
+2002,Ghana,Other Facilities,34,,,
+2010,Kenya,All Facilities,26,2,72,15
+2010,Kenya,Hospital,2,2,96,24
+2010,Kenya,Other Facilities,28,2,70,14
+2009,Namibia,All Facilities,4,1,94,49
+2009,Namibia,Hospital,0,0,100,64
+2009,Namibia,Other Facilities,32,2,93,47
+2011,Nigeria,All Facilities,30,,,
+2011,Nigeria,Hospital,0,,,
+2011,Nigeria,Other Facilities,32,,,
+2007,Rwanda,All Facilities,18,6,76,41
+2007,Rwanda,Hospital,2,10,88,52
+2007,Rwanda,Other Facilities,19,5,75,40
+2011,Sierra Leone,All Facilities,35,10,54,14
+2011,Sierra Leone,Hospital,0,4,96,23
+2011,Sierra Leone,Other Facilities,37,10,53,14
+2006,Tanzania,All Facilities,50,2,47,19
+2006,Tanzania,Hospital,2,6,92,23
+2006,Tanzania,Other Facilities,52,2,45,19
+2007,Uganda,All Facilities,58,1,41,15
+2007,Uganda,Hospital,1,5,94,16
+2007,Uganda,Other Facilities,60,1,38,15
+2005,Zambia,All Facilities,20,1,78,46
+2005,Zambia,Hospital,2,7,92,33
+2005,Zambia,Other Facilities,21,1,78,47
