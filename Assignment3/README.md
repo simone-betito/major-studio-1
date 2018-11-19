@@ -1,1 +1,1 @@
-About this project:
+This visualization illustrates the high rate of maternal mortality in Sub-Saharan Africa vs other regions in the world as well as a direct correlation between a lack of electricity in health care facilities and an increase in maternal mortality.  
