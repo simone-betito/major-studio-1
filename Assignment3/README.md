@@ -1,1 +1,1 @@
-Through the lens of SDG 5, this visualization illustrates the high rate of maternal mortality in Sub-Saharan Africa vs other regions in the world as well as a direct correlation between a lack of electricity in health care facilities and an increase in maternal mortality.  
+Through the lens of SDG 5, this visualization illustrates the high rate of maternal mortality in Sub-Saharan Africa compared to other regions in the world. In addition, it visualizes a direct correlation between lack of electricity in health care facilities and an increase in maternal mortality.  
