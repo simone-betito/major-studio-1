@@ -6,19 +6,26 @@
 		<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100|Playfair+Display" rel="stylesheet">
 		<style type="text/css">
 
-			body {
-				background-color: #000;
-				color: #fff;
+		body {
+			background-color: #000;
+			color: #fff;
+			font-family: 'PT Serif', serif;
 			}
 
-			h2 {
-				text-align: center;
-				font-family: 'PT Serif', serif;
-				color: #ddd;
-			}
+			h2, h3 {
+			text-align: center;
+			color: #ddd;
+		}
 
 			text {
 				fill: black;
+			}
+
+			.container{
+				max-width: 1000px;
+				margin-left: auto;
+				margin-right: auto;
+				padding: 50px;
 			}
 
 			/* Hide amCharts watermark */
@@ -27,14 +34,14 @@
 			}
 
 			#mapdiv {
-				width		: 49%;
+				width		: 100%;
 				height		: 500px;
 				font-size	: 11px;
 				display: inline-block;
 			}
 
 			#barChartDiv {
-				width		: 49%;
+				width		: 100%;
 				height		: 500px;
 				font-size	: 11px;
 				font-family: 'IBM Plex Sans', sans-serif;
@@ -46,13 +53,24 @@
 			}
 
 			#lineGraphDiv {
-				width		: 49%;
+				width		: 100%;
 				height		: 500px;
 				font-size	: 11px;
 				font-family: 'IBM Plex Sans', sans-serif;
-				display: none;
 
 			}
+
+			.sources {
+			  padding: 0 10px;
+			  width: 100%;
+			  max-width: 65rem;
+			  margin: 2rem auto;
+			  margin-top: 3rem;
+			  opacity: 0.75;
+			  font-size: 75%;
+		}
+
+
 		</style>
 		<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 		<script src="https://www.amcharts.com/lib/3/pie.js"></script>
@@ -70,12 +88,46 @@
 		<script src="https://www.amcharts.com/lib/3/themes/black.js"></script>
 	</head>
 	<body>
-		<h2>Improving Maternal Health in Sub-Saharan Africa by Increasing Access to Renewable Energy Sources</h2>
+		<div class="container">
+			<h2>Would dependable energy in health care facilities reduce maternal death rates in Sub-Saharan Africa?</h2>
+		</div>
+
+		<div class="container">
+			<h2>Worldwide</h2>
+			<h3>In Sub-Saharan Africa, 1 in 36 women will die from Maternal Conditions</h3>
+			<div id="barChartDiv"></div>
+		</div>
+
+		<div class="container">
+			<h2>Regional</h2>
+			<div id="mapdiv"></div>
+		</div>
+
+		<div class="container">
+			<h2>Correlation View</h2>
+			<h3></h3>
+			<div id="lineGraphDiv"></div>
+		</div>
+
+		<div class="container">
+			<h2>Takeaway Message</h2>
+		</div>
+
+		<div class="container">
+			<h2>Sources</h2>
+
+				<p>ADAIR-ROHANI, H., ZUKOR, K., BONJOUR, S., WILBURN, S., KUESEL, A. C., HEBERT, R. AND FLETCHER, E. R.
+				Limited electricity access in health facilities of sub-Saharan Africa: a systematic review of data on electricity access, sources, and reliability
+				<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4168575/">Available Here</a> </p>
+				<p>Thelancet.com. <a href="https://www.thelancet.com/action/showFullTableHTML?isHtml=true&tableId=tbl1&pii=S2214-109X%2817%2930488-6">Available Here</a></p>
+
+		</div>
+
 		<br>
 		<br>
-		<div id="mapdiv"></div>
-		<div id="barChartDiv"></div>
-		<div id="lineGraphDiv"></div>
+
+
+
 
 
 
@@ -151,10 +203,10 @@
 				var chart = AmCharts.makeChart( "barChartDiv", {
 					"type": "serial",
 					"theme": "black",
-					"titles": [{
-						"text": "In Sub-Saharan Africa, 1 in 36 women will die from Maternal Conditions",
-						"size": 15
-					}],
+					// // "titles": [{
+					// // 	"text": "In Sub-Saharan Africa, 1 in 36 women will die from Maternal Conditions",
+					// // 	"size": 15
+					// }],
 					"dataProvider": data,
 					"valueAxes": [ {
 						"gridColor": "#FFFFFF",
@@ -250,9 +302,6 @@
 
 
 
-
-
-
 			/**
 			* Creates and positions custom markers (pie charts)
 			*/
@@ -327,18 +376,19 @@
 			function clickedPie(e) {
 
 				// Toggle showing or hiding barChartDiv and lineGraphDiv
-				var	barChartDiv = document.getElementById("barChartDiv");
-				var	lineGraphDiv = document.getElementById("lineGraphDiv");
-
-				if (barChartDiv.style.display == "none") {
-					barChartDiv.style.display = "inline-block";
-					lineGraphDiv.style.display = "none";
-				}
-				else {
-					barChartDiv.style.display = "none";
-					lineGraphDiv.style.display = "inline-block";
-				}
+				// var	barChartDiv = document.getElementById("barChartDiv");
+				// var	lineGraphDiv = document.getElementById("lineGraphDiv");
+				//
+				// if (barChartDiv.style.display == "none") {
+				// 	barChartDiv.style.display = "inline-block";
+				// 	lineGraphDiv.style.display = "none";
+				// }
+				// else {
+				// 	barChartDiv.style.display = "none";
+				// 	lineGraphDiv.style.display = "inline-block";
+				// }
 			}
 		</script>
+
 	</body>
 </html>
