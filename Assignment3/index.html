@@ -98,12 +98,17 @@
 			#mapdiv .amcharts-chart-div .amcharts-balloon-div{
 				overflow:visible!important;
 			}
-			#mapdiv .amcharts-chart-div .amcharts-balloon-div div{
+
+
+			/* Custom balloon apperance */
+			.amcharts-balloon-div div{
+				font-family: 'IBM Plex Sans', sans-serif!important;
 				color:#000!important;
-				background:#f4f4f4;
-				padding:0;
-				outline:solid 5px #f4f4f4;
+				background:#ffffff!important;
+				padding:0!important;
+				outline:solid 3px #ffffff!important;
 			}
+
 
 
 		</style>
@@ -181,7 +186,7 @@
 				<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4168575/">Available Here</a> </p>
 				<p>Thelancet.com. <a href="https://www.thelancet.com/action/showFullTableHTML?isHtml=true&tableId=tbl1&pii=S2214-109X%2817%2930488-6">Available Here</a></p>
 				<p>UNICEF Data. Maternal Mortality. <a href="https://data.unicef.org/topic/maternal-health/maternal-mortality/">Available Here</a></p>
-				<p></p>
+				<p>United Nations Population Fund. <a href="https://www.unfpa.org/data/transformative-results#end-maternal">Available Here</a> </p>
 			</h4>
 		</div>
 
@@ -211,15 +216,6 @@
 					// Load the data object
 					"dataProvider" : data,
 
-					// Add legend
-					/*
-						"#f47b20" - No Electricity (%)
-						"#fff1ca" - Generator Only (%)
-						"#ffe180" - Central, Solar or Other Supply (%)
-						"#e8e3db" - no data?
-						https://www.amcharts.com/demos/logarithmic-scale/
-					*/
-
 					"legend": {
 						"width": "100%",
 						"marginRight": 27,
@@ -247,11 +243,6 @@
 						} ]
 					},
 
-					// Custom balloon appearance
-					"balloon": {
-						"backgroundAlpha": 0,
-						"fillColor": "#FF0000"
-					},
 
 					// Event executed when map is zoomed/moved/loaded
 					"listeners": [{
@@ -261,6 +252,10 @@
 				});
 
 			});
+
+
+
+
 
 			// Create the bar graph chart - load the data from external resource
 			AmCharts.loadFile("https://gavamedia.com/TEMP/barChart.csv", {}, function(response) {
@@ -303,12 +298,21 @@
 						"gridAlpha": 0,
 						"tickPosition": "start",
 						"tickLength": 20
+					},
+
+
+					// Custom balloon appearance
+					"balloon": {
+						"borderThickness": 0,
+						"fillAlpha": 1
 					}
 				} );
 
 				chart.color = "#000000";
 
 			});
+
+
 
 
 			// Create the line graph chart - load the data from external resource
@@ -369,8 +373,11 @@
 						"axisAlpha": 0,
 						"tickLength": 0
 					},
-					"export": {
-						"enabled": true
+
+					// Custom balloon appearance
+					"balloon": {
+						"borderThickness": 0,
+						"fillAlpha": 1
 					}
 				} );
 
@@ -449,6 +456,12 @@
 
 				// Create a pie chart
 				var chart = AmCharts.makeChart(image.id, image.pie);
+
+
+				// Custom balloon popup
+				var balloon = chart.balloon;
+				balloon.borderThickness = 0;
+				balloon.fillAlpha = "0";
 
 				return holder;
 			}
