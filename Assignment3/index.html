@@ -7,18 +7,30 @@
 		<style type="text/css">
 
 		body {
-			background-color: #000;
+			background-color: #333132;
 			color: #fff;
 			font-family: 'PT Serif', serif;
 			}
 
-			h2, h3, h4 {
+			h2, h3, h5 {
 			text-align: center;
 			color: #ddd;
 		}
 
 			text {
 				fill: black;
+
+			}
+
+			a {
+				color: #FFE17F;
+
+			}
+
+			h5 {
+				color: #FFE17F;
+				font-family: "IBM Plex Sans"
+
 			}
 
 			.container{
@@ -26,6 +38,10 @@
 				margin-left: auto;
 				margin-right: auto;
 				padding: 50px;
+			}
+
+			.sources{
+
 			}
 
 			/* Hide amCharts watermark */
@@ -60,15 +76,34 @@
 
 			}
 
-			.sources {
-			  padding: 0 10px;
-			  width: 100%;
-			  max-width: 65rem;
-			  margin: 2rem auto;
-			  margin-top: 3rem;
-			  opacity: 0.75;
-			  font-size: 75%;
-		}
+			#barChartDiv path{
+				/*
+				SAMPLE:
+					fill: #fff;
+					stroke: #000;
+				*/
+			}
+
+
+
+			#mapdiv #amcharts_pie_0,#mapdiv #amcharts_pie_1,#mapdiv #amcharts_pie_2,#mapdiv #amcharts_pie_3,#mapdiv #amcharts_pie_4,#mapdiv #amcharts_pie_5,#mapdiv #amcharts_pie_6,#mapdiv #amcharts_pie_7,#mapdiv #amcharts_pie_8,#mapdiv #amcharts_pie_9,#mapdiv #amcharts_pie_10{
+				overflow:visible!important;
+			}
+			#mapdiv .amcharts-main-div{
+				overflow:visible!important;
+			}
+			#mapdiv .amcharts-chart-div{
+				overflow:visible!important;
+			}
+			#mapdiv .amcharts-chart-div .amcharts-balloon-div{
+				overflow:visible!important;
+			}
+			#mapdiv .amcharts-chart-div .amcharts-balloon-div div{
+				color:#000!important;
+				background:#f4f4f4;
+				padding:0;
+				outline:solid 5px #f4f4f4;
+			}
 
 
 		</style>
@@ -89,39 +124,65 @@
 	</head>
 	<body>
 		<div class="container">
-			<h2>Would dependable energy in health care facilities reduce maternal death rates in Sub-Saharan Africa?</h2>
-			<h4> By Simone Betito </h4>
+			<h2>Would dependable energy in health care facilities reduce maternal death rates in sub-Saharan Africa?</h2>
+			<h5> By Simone Betito </h5>
 		</div>
 
 		<div class="container">
-			<h2>Worldwide</h2>
-			<h3>In Sub-Saharan Africa, 1 in 36 women will die from Maternal Conditions</h3>
+			<h4>
+				<p>
+					Through the lens of SDG-5 (Gender Equality), this visualization examines the importance of dependable energy in healthcare facilities and its role in reproductive care in sub-Saharan Africa. It also explores the direct correlation between maternal mortality rates and a lack of electricity in healthcare facilities in sub-Saharan Africa</h4>
+				</p>
+				<p>
+					Without dependable energy in healthcare facilities, women experience a range of complications including but not limited to, giving birth in the dark without access to lifesaving devices requiring electricity.
+				</p>
+				<p>
+					Iniatives that focus on investing in dependable energy in this area will have a direct impact in saving women's lives.
+				</p>
+		</div>
+
+		<div class="container">
+			<h3>In sub-Saharan Africa, 1 in 36 women will die from Maternal Conditions.</h3>
+			<h4>The chart below visualizes the discrepancy between Maternal Mortality in sub-Saharan Africa and the world. In 2015, 201,000 women in that region died from complications relating to giving birth.</h4>
+
 			<div id="barChartDiv"></div>
 		</div>
 
 		<div class="container">
-			<h2>Regional</h2>
+			<h3>Here's the energy breakdown of healthcare facilities in 11 Sub-Saharan countries</h3>
+			<h4><p>The map below looks at 11 Sub-Saharan countries (Ethiopia, The Gambia, Ghana, Kenya, Namibia, Nigeria, Rwanda, Sierra Leone, Tanzania, Uganda, Zambia) and how their health facilities are powered, either by generator only, central, solar or other supply, or no electricity at all. </p>
+				<p>In 10 out of the 11 countries examined, there is still a portion of healthcare facilities that are operating without electricity. </p>
+			</h4>
 			<div id="mapdiv"></div>
 		</div>
 
 		<div class="container">
-			<h2>Correlation View</h2>
-			<h3></h3>
+			<h3>There is a direct correlation between a lack of energy in healthcare facilities and expecting mothers dying</h3>
+			<h4>This chart compares the percentage of healthcare facilities without electricity and the percentage of maternal deaths per women in childbearing years in a specific country. As the percentage of healthcare facilities without electricity peaks, so does an increase in deaths. A pattern is observable.</h4>
 			<div id="lineGraphDiv"></div>
 		</div>
 
-		<div class="container">
-			<h2>Takeaway Message</h2>
+		<div class="container ">
+			<h3>How You Can Help</h3>
+			<h4>
+				<p>
+					Financial investment for the electrification of health centers in sub-Saharan Africa will mean life saving vaccines and care for women. The UN lists a number of devices essential in reproductive health care requiring electricity.
+				</p>
+			</h4>
 		</div>
 
-		<div class="container">
-			<h2>Sources</h2>
+		<div class="container sources">
+ 		<hr>
+			<h3>Sources</h3>
 
-				<p>ADAIR-ROHANI, H., ZUKOR, K., BONJOUR, S., WILBURN, S., KUESEL, A. C., HEBERT, R. AND FLETCHER, E. R.
+				<h4>
+					<p>ADAIR-ROHANI, H., ZUKOR, K., BONJOUR, S., WILBURN, S., KUESEL, A. C., HEBERT, R. AND FLETCHER, E. R.
 				Limited electricity access in health facilities of sub-Saharan Africa: a systematic review of data on electricity access, sources, and reliability
 				<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4168575/">Available Here</a> </p>
 				<p>Thelancet.com. <a href="https://www.thelancet.com/action/showFullTableHTML?isHtml=true&tableId=tbl1&pii=S2214-109X%2817%2930488-6">Available Here</a></p>
-
+				<p>UNICEF Data. Maternal Mortality. <a href="https://data.unicef.org/topic/maternal-health/maternal-mortality/">Available Here</a></p>
+				<p></p>
+			</h4>
 		</div>
 
 		<br>
@@ -186,6 +247,12 @@
 						} ]
 					},
 
+					// Custom balloon appearance
+					"balloon": {
+						"backgroundAlpha": 0,
+						"fillColor": "#FF0000"
+					},
+
 					// Event executed when map is zoomed/moved/loaded
 					"listeners": [{
 						"event": "positionChanged",
@@ -211,6 +278,7 @@
 					"dataProvider": data,
 					"valueAxes": [ {
 						"gridColor": "#FFFFFF",
+						"color" : "#FFE17F",
 						"gridAlpha": 0.2,
 						"dashLength": 0
 					} ],
@@ -218,6 +286,7 @@
 					"startDuration": 1,
 					"graphs": [ {
 						"balloonText": "[[category]]: <b>[[value]]</b>",
+						"colorField": "color",
 						"fillAlphas": 0.8,
 						"lineAlpha": 0.2,
 						"type": "column",
@@ -236,6 +305,9 @@
 						"tickLength": 20
 					}
 				} );
+
+				chart.color = "#000000";
+
 			});
 
 
@@ -249,10 +321,10 @@
 					"type": "serial",
 					"addClassNames": true,
 					"theme": "black",
-					"titles": [{
-						"text": "The correlation between the lack of electricity in healthcare facilities and maternal deaths",
-						"size": 15
-					}],
+					// "titles": [{
+					// 	"text": "The correlation between the lack of electricity in healthcare facilities and maternal deaths",
+					// 	"size": 15
+					// }],
 					"autoMargins": false,
 					"marginLeft": 30,
 					"marginRight": 8,
@@ -267,8 +339,11 @@
 					"dataProvider": data,
 					"valueAxes": [ {
 						"axisAlpha": 0,
-						"position": "left"
-					} ],
+						"position": "left",
+						"logarithmic": true
+					}, {
+						"logarithmic": true
+					}],
 					"startDuration": 1,
 					"graphs": [ {
 						"balloonText": "<span style='font-size:12px;'>[[title]] in [[category]]:<br><span style='font-size:20px;'>[[value]]%</span> [[additional]]</span>",
@@ -325,6 +400,12 @@
 					// Add theme
 					if ("undefined" == typeof image.pie.theme) image.pie.theme = map.theme;
 
+
+					// Make pies fill all the chart area
+					image.pie.autoMargins = false;
+					image.pie.radius = "30%";
+					image.width = 80;
+					image.height = 80;
 
 
 					// Click & hover events for each pie chart
