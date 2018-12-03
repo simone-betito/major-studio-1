@@ -1,5 +1,5 @@
-Through the lens of SDG 5, this visualization illustrates the high rate of maternal mortality in Sub-Saharan Africa compared to other regions in the world. In addition, it visualizes a direct correlation between lack of electricity in health care facilities and an increase in maternal mortality.  
+Through the lens of SDG-5 (Gender Equality), this visualization examines the importance of dependable energy in healthcare facilities and its role in reproductive care in sub-Saharan Africa. It also explores the direct correlation between maternal mortality rates and a lack of electricity in healthcare facilities in sub-Saharan Africa</h4>
 
-The code is still in its infancy stages.
+Without dependable energy in healthcare facilities, women experience a range of complications including but not limited to, giving birth in the dark without access to lifesaving devices requiring electricity.
 
-I'm hoping that proving this direct correlation will lead to investments in renewable energy in healthcare facilities as it will go directly to saving women's lives. 
+Iniatives that focus on investing in dependable energy in this area will have a direct impact in saving women's lives.
