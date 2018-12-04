@@ -19,18 +19,19 @@
 
 			text {
 				fill: black;
-
 			}
 
 			a {
 				color: #FFE17F;
-
 			}
 
 			h5 {
 				color: #FFE17F;
-				font-family: "IBM Plex Sans"
+				font-family: "IBM Plex Sans";
+			}
 
+			b {
+				background-color: #FFE17F;
 			}
 
 			.container{
@@ -126,17 +127,19 @@
 		<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
 		<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
 		<script src="https://www.amcharts.com/lib/3/themes/black.js"></script>
+		<script src='https://unpkg.com/intersection-observer@0.5.0/intersection-observer.js'></script>
+		<script src='https://unpkg.com/scrollama'></script>
 	</head>
 	<body>
 		<div class="container">
-			<h2>Would dependable energy in health care facilities reduce maternal death rates in sub-Saharan Africa?</h2>
+			<h2>Would <b>dependable energy</b> in healthcare facilities <b>reduce maternal death rates</b> in sub-Saharan Africa?</h2>
 			<h5> By Simone Betito </h5>
 		</div>
 
 		<div class="container">
 			<h4>
 				<p>
-					Through the lens of SDG-5 (Gender Equality), this visualization examines the importance of dependable energy in healthcare facilities and its role in reproductive care in sub-Saharan Africa. It also explores the direct correlation between maternal mortality rates and a lack of electricity in healthcare facilities in sub-Saharan Africa</h4>
+					Through the lens of SDG-5 (Gender Equality), this visualization examines the importance of dependable energy in healthcare facilities and its role in reproductive care in sub-Saharan Africa. It also explores the direct correlation between maternal mortality rates and a lack of electricity in healthcare facilities in sub-Saharan Africa
 				</p>
 				<p>
 					Without dependable energy in healthcare facilities, women experience a range of complications including but not limited to, giving birth in the dark without access to lifesaving devices requiring electricity.
@@ -144,6 +147,7 @@
 				<p>
 					Iniatives that focus on investing in dependable energy in this area will have a direct impact in saving women's lives.
 				</p>
+			</h4>
 		</div>
 
 		<div class="container">
@@ -154,7 +158,7 @@
 		</div>
 
 		<div class="container">
-			<h3>Here's the energy breakdown of healthcare facilities in 11 Sub-Saharan countries</h3>
+			<h3>Here's the energy breakdown of healthcare facilities in 11 sub-Saharan countries</h3>
 			<h4><p>The map below looks at 11 Sub-Saharan countries (Ethiopia, The Gambia, Ghana, Kenya, Namibia, Nigeria, Rwanda, Sierra Leone, Tanzania, Uganda, Zambia) and how their health facilities are powered, either by generator only, central, solar or other supply, or no electricity at all. </p>
 				<p>In 10 out of the 11 countries examined, there is still a portion of healthcare facilities that are operating without electricity. </p>
 			</h4>
@@ -281,7 +285,7 @@
 					"startDuration": 1,
 					"graphs": [ {
 						"balloonText": "[[category]]: <b>[[value]]</b>",
-						"colorField": "color",
+						"fillColors": "#0000ff",
 						"fillAlphas": 0.8,
 						"lineAlpha": 0.2,
 						"type": "column",
@@ -308,7 +312,6 @@
 					}
 				} );
 
-				chart.color = "#000000";
 
 			});
 
