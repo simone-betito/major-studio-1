@@ -40,7 +40,7 @@
       }
 
       a {
-        color: #ffe17f;
+        color: #E7AD99;
       }
 
       h5 {
@@ -67,8 +67,6 @@
 				padding-bottom: 0;
       }
 
-
-
       .chart-loading {
         background-color: #3d3b3d;
         border-radius: 6px;
@@ -79,11 +77,20 @@
         border-radius: 0px;
         transition: all 0.5s ease;
       }
+			.iconHolder{
+				display: flex;
+				justify-content: space-around;
+				max-width: 500px;
+				margin: 0 auto;
+				text-align: center;
+			}
 
 			.icons {
-				width: 23%;
-				float: left;
+				width: 19%;
+				/* float: left; */
 				padding: 1%;
+				max-width: 50px;
+				text-align: center;
 			}
 
 			#sources {
@@ -92,7 +99,8 @@
 			}
 
 			#sources p {
-				color: #7f7f7f;
+				color: #FFFFFF;
+				opacity: 0.75;
 			}
 
       /* Hide amCharts watermark */
@@ -227,7 +235,7 @@
 
     <div class="container">
       <h3>
-        In sub-Saharan Africa, 1 in 36 women will die from Maternal Conditions.
+        In sub-Saharan Africa, <b>1 in 36 women will die from Maternal Conditions.</b>
       </h3>
       <p>
         The chart below visualizes the discrepancy between Maternal Mortality in
@@ -240,7 +248,7 @@
 
     <div class="container">
       <h3>
-        Here's the energy breakdown of healthcare facilities in 11 sub-Saharan
+        Here's the <b>energy breakdown</b> of healthcare facilities in 11 sub-Saharan
         countries
       </h3>
         <p>
@@ -259,7 +267,7 @@
 
     <div class="container">
       <h3>
-        There is a direct correlation between a lack of energy in healthcare
+        There is a <b>direct correlation</b> between a lack of energy in healthcare
         facilities and expecting mothers dying
       </h3>
   		<p>
@@ -280,29 +288,13 @@
           The UN lists a number of devices essential in reproductive health care
           requiring electricity.
         </p>
+			<div class="iconHolder">
+			<div class="icons"> <img src = "icons/breastPump.svg"/> Breast Pump</div>
+			<div class="icons"><img src = "icons/ecgMachine.svg"/> Patient Monitor</div>
+			<div class="icons"><img src = "icons/nounInfantIncubator.svg"/>Newborn incubator</div>
+			<div class="icons"><img src = "icons/vaccineStorage.svg"/>Medical Refrigeration</div>
+		</div>
 
-				<table style="width:100%">
-			  <tr>
-			    <th>Firstname</th>
-			    <th>Lastname</th>
-			    <th>Age</th>
-			  </tr>
-			  <tr>
-			    <td>Jill</td>
-			    <td>Smith</td>
-			    <td>50</td>
-			  </tr>
-			  <tr>
-			    <td>Eve</td>
-			    <td>Jackson</td>
-			    <td>94</td>
-			  </tr>
-			</table>
-
-			<div class="icons"> patient monitor</div>
-			<div class="icons"> patient monitor</div>
-			<div class="icons"> patient monitor</div>
-			<div class="icons"> patient monitor</div>
     </div>
 
     <div class="container " id="sources">
@@ -463,7 +455,7 @@
             graphs: [
               {
                 balloonText: "[[category]]: <b>[[value]]</b>",
-                fillColors: "#b33413",
+                fillColors: "#FFE17F",
                 fillAlphas: 0.8,
                 lineAlpha: 0.2,
                 type: "column",
@@ -556,6 +548,7 @@
                   lineThickness: 3,
                   fillAlphas: 0,
                   lineAlpha: 1,
+									lineColor: "#FF6B35",
                   title: "% of Maternal Deaths per Women in Childbearing Years",
                   valueField:
                     "% of Maternal Deaths per Women in Childbearing Years"
@@ -568,6 +561,7 @@
                   lineThickness: 3,
                   fillAlphas: 0,
                   lineAlpha: 1,
+									lineColor: "#FFE17F",
                   title: "% of Health Facilities With No Electricity",
                   valueField: "% of All Health Facilities With No Electricity"
                 }
@@ -577,6 +571,30 @@
                 gridPosition: "start",
                 axisAlpha: 0,
                 tickLength: 0
+              },
+
+							legend: {
+                width: "100%",
+                marginRight: 27,
+                marginLeft: 27,
+                equalWidths: false,
+                backgroundAlpha: 0.5,
+                backgroundColor: "#FFFFFF",
+                borderColor: "#ffffff",
+                borderAlpha: 1,
+                top: 450,
+                left: 0,
+                horizontalGap: 10,
+                data: [
+                  {
+                    title: "% of Health Facilities With No Electricity",
+                    color: "#FFE17F"
+                  },
+                  {
+                    title: "% of Maternal Deaths per Women in Childbearing Years",
+                    color: "#FF6B35"
+                  }
+                ]
               },
 
               // Custom balloon appearance
