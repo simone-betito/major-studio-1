@@ -1,7 +1,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Major Studio Assignment #3</title>
+    <title>Major Studio Final Assignment</title>
     <link
       href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400|PT+Serif|Playfair+Display|Raleway"
       rel="stylesheet"
@@ -140,7 +140,7 @@
 
       #mapdiv {
         width: 100%;
-        height: 500px;
+        height: 700px;
         font-size: 11px;
         display: inline-block;
       }
@@ -223,7 +223,7 @@
     <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
     <script src="https://www.amcharts.com/lib/3/pie.js"></script>
     <script src="https://www.amcharts.com/lib/3/ammap_amcharts_extension.js"></script>
-    <script src="https://www.amcharts.com/lib/3/maps/js/continentsHigh.js"></script>
+    <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
     <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
     <link
       rel="stylesheet"
@@ -305,6 +305,10 @@
           In 10 out of the 11 countries examined, there is still a portion of
           healthcare facilities that are operating without electricity.
         </p>
+				<p>
+				Use your mouse to hover over the countries below:
+				</p>
+
       <div id="mapdiv" class="chart-loading"></div>
     </div>
 
@@ -360,13 +364,15 @@
           The Lancet. "Table: Number of public hospitals and access quotients with UI across 48 sub-Saharan African countries and islands, including Zanzibar for 2015"
           <a
             href="https://www.thelancet.com/action/showFullTableHTML?isHtml=true&tableId=tbl1&pii=S2214-109X%2817%2930488-6"
-            >Available Here</a>
+            >Available Here</a
+          >
         </p>
         <p>
           UNICEF Data. "Maternal Mortality." (2017, February)
           <a
             href="https://data.unicef.org/topic/maternal-health/maternal-mortality/"
-            >Available Here</a>
+            >Available Here</a
+          >
         </p>
         <p>
           United Nations Population Fund."End Maternal Death"
@@ -382,7 +388,7 @@
     <script type="text/javascript">
       // Create the map - load the data from external resource
       AmCharts.loadFile(
-        "https://gavamedia.com/TEMP/assignment_3_data.json",
+        "https://gavamedia.com/TEMP/assignment_3_data.json?new",
         {},
         function(response) {
           // Convert the data string to an object
@@ -410,11 +416,17 @@
               theme: "light",
               projection: "winkel3",
 
+							"areasSettings": {
+								"color": "#333333",
+								"rollOverColor": "#ffe17f",
+								"unlistedAreasAlpha": 0
+							},
+
+
               // Load the data object
               dataProvider: data,
 
               legend: {
-                width: "100%",
                 marginRight: 27,
                 marginLeft: 27,
                 equalWidths: false,
@@ -422,7 +434,7 @@
                 backgroundColor: "#FFFFFF",
                 borderColor: "#ffffff",
                 borderAlpha: 1,
-                top: 450,
+                top: 650,
                 left: 0,
                 horizontalGap: 10,
                 data: [
@@ -736,6 +748,7 @@
         var balloon = chart.balloon;
         balloon.borderThickness = 0;
         balloon.fillAlpha = "0";
+
 
         return holder;
       }
