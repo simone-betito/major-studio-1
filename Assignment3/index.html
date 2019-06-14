@@ -240,6 +240,7 @@
     <script src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
     <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
     <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/radar.js"></script>
     <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
     <link
       rel="stylesheet"
@@ -397,7 +398,7 @@
       </h3>
     </div>
 
-    <div class="container " id="sources">
+    <div class="container" id="sources">
       <hr />
       <h3>Sources</h3>
       <p>
@@ -631,7 +632,8 @@
               window.scrollY + window.innerHeight - lineGraph.clientHeight;
             let isShown = showChart > lineGraph.offsetTop;
             if (isShown && !isBuilt) {
-              createLineGraph();
+              // createLineGraph();
+              createRadarChart();
               isBuilt = true;
               lineGraph.classList.remove("chart-loading");
               lineGraph.classList.add("chart-loaded");
@@ -639,105 +641,152 @@
           }
           window.addEventListener("scroll", makeLineGraph);
 
-          function createLineGraph() {
-            var lineGraphChart = AmCharts.makeChart("lineGraphDiv", {
-              type: "serial",
-              addClassNames: true,
-              theme: "black",
-              // "titles": [{
-              // 	"text": "The correlation between the lack of electricity in healthcare facilities and maternal deaths",
-              // 	"size": 15
-              // }],
-              autoMargins: false,
-              color: "#ffffff",
-              marginLeft: 30,
-              marginRight: 8,
-              marginTop: 10,
-              marginBottom: 26,
-              balloon: {
-                adjustBorderColor: false,
-                horizontalPadding: 10,
-                verticalPadding: 8,
-                color: "#ffffff"
-              },
-              dataProvider: data,
-              valueAxes: [
-                {
-                  color: "#ffffff",
-                  axisAlpha: 0,
-                  position: "left",
-                  logarithmic: true
-                },
-                {
-                  color: "#ffffff",
-                  logarithmic: true
-                }
-              ],
-              startDuration: 1,
+          // function createLineGraph() {
+          //   var lineGraphChart = AmCharts.makeChart("lineGraphDiv", {
+          //     type: "serial",
+          //     addClassNames: true,
+          //     theme: "black",
+          //     // "titles": [{
+          //     // 	"text": "The correlation between the lack of electricity in healthcare facilities and maternal deaths",
+          //     // 	"size": 15
+          //     // }],
+          //     autoMargins: false,
+          //     color: "#ffffff",
+          //     marginLeft: 30,
+          //     marginRight: 8,
+          //     marginTop: 10,
+          //     marginBottom: 26,
+          //     balloon: {
+          //       adjustBorderColor: false,
+          //       horizontalPadding: 10,
+          //       verticalPadding: 8,
+          //       color: "#ffffff"
+          //     },
+          //     dataProvider: data,
+          //     valueAxes: [
+          //       {
+          //         color: "#ffffff",
+          //         axisAlpha: 0,
+          //         position: "left",
+          //         logarithmic: true
+          //       },
+          //       {
+          //         color: "#ffffff",
+          //         logarithmic: true
+          //       }
+          //     ],
+          //     startDuration: 1,
+          //     graphs: [
+          //       {
+          //         balloonText:
+          //           "<span style='font-size:12px;'>[[title]] in [[category]]:<br><span style='font-size:20px;'>[[value]]%</span> [[additional]]</span>",
+          //         bullet: "round",
+          //         lineThickness: 3,
+          //         fillAlphas: 0,
+          //         lineAlpha: 1,
+          //         lineColor: "#F4FFEA",
+          //         title: "% of Maternal Deaths per Women in Childbearing Years",
+          //         valueField:
+          //           "% of Maternal Deaths per Women in Childbearing Years"
+          //       },
+          //       {
+          //         id: "graph2",
+          //         balloonText:
+          //           "<span style='font-size:12px;'>[[title]] in [[category]]:<br><span style='font-size:20px;'>[[value]]%</span> [[additional]]</span>",
+          //         bullet: "round",
+          //         lineThickness: 3,
+          //         fillAlphas: 0,
+          //         lineAlpha: 1,
+          //         lineColor: "#FFE17F",
+          //         title: "% of Health Facilities With No Electricity",
+          //         valueField: "% of All Health Facilities With No Electricity"
+          //       }
+          //     ],
+          //     categoryField: "Country",
+          //     categoryAxis: {
+          //       gridPosition: "start",
+          //       axisAlpha: 0,
+          //       tickLength: 0
+          //     },
+
+          //     legend: {
+          //       width: "100%",
+          //       marginRight: 27,
+          //       marginLeft: 27,
+          //       equalWidths: false,
+          //       backgroundAlpha: 0.5,
+          //       backgroundColor: "#FFFFFF",
+          //       borderColor: "#ffffff",
+          //       color: "#000000",
+          //       borderAlpha: 1,
+          //       top: 450,
+          //       left: 0,
+          //       horizontalGap: 10,
+          //       data: [
+          //         {
+          //           title: "% of Health Facilities With No Electricity",
+          //           color: "#FFE17F"
+          //         },
+          //         {
+          //           title:
+          //             "% of Maternal Deaths per Women in Childbearing Years",
+          //           color: "#F4FFEA"
+          //         }
+          //       ]
+          //     },
+
+          //     // Custom balloon appearance
+          //     balloon: {
+          //       borderThickness: 0,
+          //       fillAlpha: 1
+          //     }
+          //   });
+          // }
+
+          function createRadarChart() {
+            var radarChart = AmCharts.makeChart("lineGraphDiv", {
+              type: "radar",
+              theme: "light",
+              categoryField: "category",
               graphs: [
                 {
-                  balloonText:
-                    "<span style='font-size:12px;'>[[title]] in [[category]]:<br><span style='font-size:20px;'>[[value]]%</span> [[additional]]</span>",
-                  bullet: "round",
-                  lineThickness: 3,
-                  fillAlphas: 0,
-                  lineAlpha: 1,
-                  lineColor: "#F4FFEA",
-                  title: "% of Maternal Deaths per Women in Childbearing Years",
-                  valueField:
-                    "% of Maternal Deaths per Women in Childbearing Years"
-                },
-                {
-                  id: "graph2",
-                  balloonText:
-                    "<span style='font-size:12px;'>[[title]] in [[category]]:<br><span style='font-size:20px;'>[[value]]%</span> [[additional]]</span>",
-                  bullet: "round",
-                  lineThickness: 3,
-                  fillAlphas: 0,
-                  lineAlpha: 1,
-                  lineColor: "#FFE17F",
-                  title: "% of Health Facilities With No Electricity",
-                  valueField: "% of All Health Facilities With No Electricity"
+                  valueField: "value"
                 }
               ],
-              categoryField: "Country",
-              categoryAxis: {
-                gridPosition: "start",
-                axisAlpha: 0,
-                tickLength: 0
-              },
-
-              legend: {
-                width: "100%",
-                marginRight: 27,
-                marginLeft: 27,
-                equalWidths: false,
-                backgroundAlpha: 0.5,
-                backgroundColor: "#FFFFFF",
-                borderColor: "#ffffff",
-                color: "#000000",
-                borderAlpha: 1,
-                top: 450,
-                left: 0,
-                horizontalGap: 10,
-                data: [
-                  {
-                    title: "% of Health Facilities With No Electricity",
-                    color: "#FFE17F"
-                  },
-                  {
-                    title:
-                      "% of Maternal Deaths per Women in Childbearing Years",
-                    color: "#F4FFEA"
-                  }
-                ]
-              },
-
-              // Custom balloon appearance
-              balloon: {
-                borderThickness: 0,
-                fillAlpha: 1
-              }
+              valueAxes: [
+                {
+                  axisTitleOffset: 20,
+                  minimum: 0,
+                  axisAlpha: 0.15,
+                  dashLength: 3
+                }
+              ],
+              dataProvider: [
+                {
+                  category: "Category 1",
+                  value: 156.9
+                },
+                {
+                  category: "Category 2",
+                  value: 131.1
+                },
+                {
+                  category: "Category 3",
+                  value: 115.8
+                },
+                {
+                  category: "Category 4",
+                  value: 109.9
+                },
+                {
+                  category: "Category 5",
+                  value: 108.3
+                },
+                {
+                  category: "Category 6",
+                  value: 99
+                }
+              ]
             });
           }
         }
