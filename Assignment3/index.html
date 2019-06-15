@@ -60,6 +60,12 @@
         line-height: 1.39;
       }
 
+      h4 {
+        font-family: monospace;
+        font-weight: 100;
+        font-size: 0.9em;
+      }
+
       text {
         fill: black;
       }
@@ -168,10 +174,10 @@
       #lineGraphDiv .amcharts-value-axis text {
         fill: #fff;
       }
-
+      /* 
       #lineGraphDiv text {
-        fill: #000;
-      }
+        fill: #fff;
+      } */
 
       #barChartDiv text {
         fill: #fff;
@@ -179,10 +185,23 @@
 
       #lineGraphDiv {
         width: 100%;
-        height: 500px;
+        height: 700px;
         font-size: 11px;
         font-family: "IBM Plex Sans", sans-serif;
       }
+      #lineGraphDiv legend {
+        fill: black;
+      }
+
+      #lineGraphDiv > div > div:first-of-type text {
+        /* stroke: white; */
+        fill: white;
+      }
+
+      /* #lineGraphDiv path {
+        stroke-opacity: 0.7;
+        stroke: blue;
+      } */
 
       #barChartDiv path {
         /*
@@ -311,9 +330,9 @@
         <u>In 10 out of the 11 countries</u> examined, there is still a portion
         of healthcare facilities that are operating without electricity.
       </p>
-      <p>
+      <h4>
         Use your mouse to hover over the countries below:
-      </p>
+      </h4>
 
       <div id="mapdiv" class="chart-loading"></div>
     </div>
@@ -338,7 +357,7 @@
       <p>
         Some initiatives in Sub-Saharan Africa have already been begun
         implementation. In Liberia, under a partnership between six UN agencies
-        working in collaboration with the Liberian Government- UN Women have
+        working in collaboration with the Liberian Government, UN Women have
         installed solar lighting systems in 26 health centres and in five
         maternal waiting rooms in rural Liberia to improve maternal and child
         healthcare services.
@@ -746,47 +765,83 @@
           function createRadarChart() {
             var radarChart = AmCharts.makeChart("lineGraphDiv", {
               type: "radar",
-              theme: "light",
-              categoryField: "category",
+              theme: "dark",
+              categoryField: "Country",
               graphs: [
                 {
-                  valueField: "value"
+                  balloonText:
+                    "<span style='font-size:12px;'>[[title]] in [[category]]:<br><span style='font-size:20px;'>[[description]]%</span> [[additional]]</span>",
+                  bullet: "round",
+                  lineThickness: 3,
+                  fillAlphas: 0,
+                  lineAlpha: 1,
+                  lineColor: "#F4FFEA",
+                  title: "% of Maternal Deaths per Women in Childbearing Years",
+                  descriptionField: "actual",
+                  valueField:
+                    "% of Maternal Deaths per Women in Childbearing Years"
+                },
+                {
+                  id: "graph2",
+                  balloonText:
+                    "<span style='font-size:12px;'>[[title]] in [[category]]:<br><span style='font-size:20px;'>[[value]]%</span> [[additional]]</span>",
+                  bullet: "round",
+                  lineThickness: 3,
+                  fillAlphas: 0,
+                  lineAlpha: 1,
+                  lineColor: "#FFE17F",
+                  title: "% of Health Facilities With No Electricity",
+                  valueField: "% of All Health Facilities With No Electricity"
                 }
               ],
               valueAxes: [
                 {
-                  axisTitleOffset: 20,
-                  minimum: 0,
-                  axisAlpha: 0.15,
-                  dashLength: 3
+                  color: "#fff",
+                  axisAlpha: 0.3,
+                  axisColor: "#fff",
+                  position: "left",
+                  logarithmic: true,
+                  gridColor: "#FFFFFF",
+                  gridAlpha: 0.1,
+                  axisColor: "#fff"
+                },
+                {
+                  color: "#fff",
+                  logarithmic: true
                 }
               ],
-              dataProvider: [
-                {
-                  category: "Category 1",
-                  value: 156.9
-                },
-                {
-                  category: "Category 2",
-                  value: 131.1
-                },
-                {
-                  category: "Category 3",
-                  value: 115.8
-                },
-                {
-                  category: "Category 4",
-                  value: 109.9
-                },
-                {
-                  category: "Category 5",
-                  value: 108.3
-                },
-                {
-                  category: "Category 6",
-                  value: 99
-                }
-              ]
+              dataProvider: data,
+              legend: {
+                width: "100%",
+                marginRight: 27,
+                marginLeft: 27,
+                equalWidths: false,
+                backgroundAlpha: 0.5,
+                backgroundColor: "#FFFFFF",
+                borderColor: "#ffffff",
+                color: "#000",
+                borderAlpha: 1,
+                top: 450,
+                left: 0,
+                horizontalGap: 10,
+                data: [
+                  {
+                    title: "% of Health Facilities With No Electricity",
+                    color: "#FFE17F"
+                  },
+                  {
+                    title:
+                      "% of Maternal Deaths per Women in Childbearing Years",
+                    color: "#F4FFEA"
+                  }
+                ]
+              },
+
+              // Custom balloon appearance
+              balloon: {
+                borderThickness: 0,
+                fillAlpha: 1
+              }
             });
           }
         }
