@@ -311,6 +311,9 @@
         sub-Saharan Africa and the world. 201,000 women in that region died from
         complications relating to giving birth in 2015.
       </p>
+      <h4>
+        Hover over the bars to get the true figures:
+      </h4>
 
       <div id="barChartDiv" class="chart-loading"></div>
     </div>
@@ -349,6 +352,10 @@
         healthcare facilities without electricity peaks, so does an increase in
         deaths. A pattern is observable.
       </p>
+      <h4>
+        Hover over the chart to get the true figures that make up the
+        correlation:
+      </h4>
       <div id="lineGraphDiv" class="chart-loading"></div>
     </div>
 
@@ -357,17 +364,24 @@
       <p>
         Some initiatives in Sub-Saharan Africa have already been begun
         implementation. In Liberia, under a partnership between six UN agencies
-        working in collaboration with the Liberian Government, UN Women have
-        installed solar lighting systems in 26 health centres and in five
-        maternal waiting rooms in rural Liberia to improve maternal and child
-        healthcare services.
+        working in collaboration with the Liberian Government,
+        <u
+          >UN Women have installed solar lighting systems in 26 health centres
+          and in five maternal waiting rooms in rural Liberia
+        </u>
+        to improve maternal and child healthcare services.
         <br />
-        <br />According to a WHO study published in August 2013, 1 in 4 health
-        facilities in 11 countries in sub-Saharan Africa has no access to
-        electricity and most facilities lack a reliable supply. Facilities have
-        trouble keeping back-up power sources such as diesel generators due to
-        high fuel costs and unreliable fuel delivery. The study found that fewer
-        than 30% of the generators were actually operational.<br />
+        <br />According to a WHO study published in August 2013,
+        <u>
+          1 in 4 health facilities in 11 countries in sub-Saharan Africa has no
+          access to electricity and most facilities lack a reliable supply.</u
+        >
+        Facilities have trouble keeping back-up power sources such as diesel
+        generators due to high fuel costs and unreliable fuel delivery.
+        <u
+          >The study found that fewer than 30% of the generators were actually
+          operational.</u
+        ><br />
         <br />
         Sub-Saharan Africa has immense potential for renewable energy
         initiatives. Luckily, the cost of unitily-scale solar has dropped by
@@ -605,7 +619,8 @@
             startDuration: 1,
             graphs: [
               {
-                balloonText: "[[category]]: <b>[[value]]</b>",
+                balloonText:
+                  "<span style='font-size:12px;'>[[title]] in [[category]]:<br><span style='font-size:20px;'>[[value]]</span> [[additional]]</span>",
                 fillColors: "#FFE17F",
                 fillAlphas: 0.8,
                 lineAlpha: 0.2,
